@@ -4,6 +4,9 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import SignIn from '../pages/SignIn/SignIn';
 import Splash from '../assets/Splash/Splash.png'
+import SignIn1 from '../pages/SignIn1/SignIn1';
+import SignUp from '../pages/SignUp/SignUp';
+import Home from '../pages/Home/Home';
 
 const Stack = createNativeStackNavigator();
 
@@ -31,7 +34,10 @@ const Navigation = () => {
           component={SignIn}
         
         />
-        {/* <Stack.Screen name="Profile" component={ProfileScreen} /> */}
+        
+        <Stack.Screen name="SignIn1" component={SignIn1} />
+        <Stack.Screen name="SignUp" component={SignUp} />
+        <Stack.Screen name="Home" component={Home} />
       </Stack.Navigator>
     </NavigationContainer>
   );
