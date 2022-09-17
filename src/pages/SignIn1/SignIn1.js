@@ -4,10 +4,16 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 const SignIn1 = () => {
     const [text, onChangeText] = React.useState("Useless Text");
   return (
-  <SafeAreaView style={{flex: 1}}>
-    <View style={{flex: 1}}>
+  <SafeAreaView style={{flex: 1, flexDirection: 'column'}}>
+   
+    <View style={{ width: "100%", height: 200,backgroundColor: '#2F5FDB' }}>
+        <Image
+          source={require("../SignIn/Muse.png")}
+          style={{ width: "100%", height: "100%", resizeMode: "cover",  }}
+        />
+      </View>
          <View>
-            <Text style={{fontSize: 30, fontWeight: 'bold', marginTop: 200, padding: 30}}>Sign In</Text>
+            <Text style={{fontSize: 30, fontWeight: 'bold', marginTop: 10, padding: 30}}>Sign In</Text>
          </View>
          <View>
             <Text style={{marginLeft: 30, fontWeight: '100'}}>Email Adrress</Text>
@@ -89,7 +95,7 @@ const SignIn1 = () => {
             </TouchableOpacity>
          </View>
 
-    </View>
+   
   </SafeAreaView>
   )
 }

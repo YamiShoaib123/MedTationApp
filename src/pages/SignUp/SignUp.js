@@ -6,20 +6,29 @@ import {
   StyleSheet,
   TouchableOpacity,
   Image,
+  ScrollView,
 } from "react-native";
 import React from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
 const SignIn1 = ({ navigation }) => {
-  const [text, onChangeText] = React.useState("Useless Text");
+  const [text, onChangeText] = React.useState("example@test.com");
+  const [password, setPassword] = React.useState('');
+  const [Confirmpassword, setconfirmPassword] = React.useState('');
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <View style={{ flex: 1 }}>
+    <ScrollView>
+      <View style={{ width: "100%", height: 200,backgroundColor: '#2F5FDB' }}>
+        <Image
+          source={require("../SignIn/Muse.png")}
+          style={{ width: "100%", height: "100%", resizeMode: "cover",  }}
+        />
+      </View>
         <View>
           <Text
             style={{
               fontSize: 30,
               fontWeight: "bold",
-              marginTop: 200,
+              marginTop: 10,
               padding: 30,
             }}
           >
@@ -40,8 +49,18 @@ const SignIn1 = ({ navigation }) => {
           <Text style={{ marginLeft: 30, fontWeight: "100" }}>password</Text>
           <TextInput
             style={styles.input}
-            onChangeText={onChangeText}
-            value={text}
+            onChangeText={setPassword}
+            value={password}
+            placeholder="******"
+          />
+        </View>
+        <View>
+          <Text style={{ marginLeft: 30, fontWeight: "100" }}>Confirm password</Text>
+          <TextInput
+            style={styles.input}
+            onChangeText={setconfirmPassword}
+            value={Confirmpassword}
+            placeholder="******"
           />
         </View>
         <View style={{ flexDirection: "row", marginLeft: 20, marginTop: 10 }}>
@@ -62,13 +81,16 @@ const SignIn1 = ({ navigation }) => {
             backgroundColor: "#2F5FDB",
             width: 315,
             height: 70,
-            marginLeft: 37,
-            marginRight: 25,
+           
             borderRadius: 10,
-            marginTop: 80,
+            marginTop: 40,
             borderRadius: 30,
             flexDirection: "row",
             justifyContent: "space-between",
+            alignContent: 'center',
+            alignItems: 'center',
+            alignSelf: 'center'
+            
           }}
           onPress={() => navigation.navigate("Home")}
         >
@@ -76,7 +98,7 @@ const SignIn1 = ({ navigation }) => {
             style={{
               color: "white",
               marginLeft: 30,
-              marginTop: 20,
+             
               fontSize: 20,
             }}
           >
@@ -86,10 +108,10 @@ const SignIn1 = ({ navigation }) => {
             name="arrow-forward-outline"
             size={30}
             color="white"
-            style={{ marginTop: 17, marginRight: 10 }}
+            style={{ marginRight: 10 }}
           />
         </TouchableOpacity>
-      </View>
+        </ScrollView>
     </SafeAreaView>
   );
 };
